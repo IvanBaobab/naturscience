@@ -1,21 +1,62 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title> </title>
-        <link href="">
-        <style type="text/css">
+<head>
+    <title> NatureScience </title>
+    <link href="">
+    <meta charset="utf-8" />
+    <style type="text/css">
+        main {
+            width: 100%;
+            height: 100vh;
+            background: #fffae1;
+        }
+        div {
+            width: 100%;
+            display: flex;
+            justify-content: space-around; 
+        }
+        .objects {
+            width: 30vw;
+            height:30vh;
+            background: #fff156;
+            font-size: 2em;
+            font-family: 'Bad Script';
+            border: 2px #ffd800 solid;
+            border-radius: 10px;
+        }
+        .choose {
+            min-width: 250px;
+            min-height: 120px;
+            width: 20vw;
+            height: 20vh;
+            padding: 1em;
+            margin: 5vh;
+            font-size: 2em;
+            background: #7eeafe;
+            border: 5px #00a1ff solid;
+            border-radius: 20px;
+        }
 
-        </style>
-    </head>
-    <body>
-        <header>
-            Добро пожаловать!
-        </header>
-        <main>
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <br>
+        <div>
+            <a href="enter"> <button type="button" class="objects"> Биология </button> </a>
+            <a href="enter"> <button type="button" class="objects"> Химия </button> </a>
+        </div>
+        <div>
+            <button type="button" class="choose"> Выбери свою науку </button>
+        </div>
+        <div>
+            <a href="enter"> <button type="button" class="objects"> Физика </button> </a>
+            <a href="enter"> <button type="button" class="objects"> География </button> </a>
+        </div>
+    </main>
+    <footer>
 
-        </main>
-        <footer>
-
-        </footer>
-    </body>
+    </footer>
+</body>
 </html>
