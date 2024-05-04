@@ -1,13 +1,22 @@
-
-main {
+main{
+    display: flex;
+    justify-content: space-around;
+}
+section{
     width: 100%;
     height: 100vh;
     background: #fffae1;
+    
 }
 div {
     width: 100%;
     display: flex;
     justify-content: space-around; 
+}
+.create-line{
+    height: 100vh;
+    border-left: 3px solid #000000;
+    margin: 1px
 }
 .objects {
     width: 30vw;
