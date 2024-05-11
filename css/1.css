@@ -5,7 +5,6 @@ main{
 section{
     width: 100%;
     height: 100vh;
-    background: #fffae1;
     
 }
 div {
@@ -15,9 +14,63 @@ div {
 }
 .create-line{
     height: 100vh;
-    border-left: 3px solid #000000;
-    margin: 1px
+    border-left: 4px dashed #1a22c5;
+    margin: 1px;
 }
+.chat{
+    background-color: rgb(110, 150, 225);
+    font-size: 18px;
+    font-family: "Golos Text";
+    padding: 1%;
+    padding-right: 1.5%;
+}
+#h1{
+    font-size: 24px;
+    font-weight: 600;
+}
+#block p{
+    border: #f4cd1e solid 4px;
+    border-radius: 100px;
+    background-color: white;
+    text-align: center;
+    padding: 4px;
+}
+#comment{
+    font-size: 16px;
+}
+#submit{
+    font-size: 16px;
+    aspect-ratio: 8/1;
+}
+
+
+.a{
+	transition: all 500ms ease;
+}
+.a:hover {
+	background: rgba(0,0,0,0);
+	color: #3a7999;
+	box-shadow: inset 0 0 0 3px #3a7999;
+}
+.a-right{
+    line-height: 85px;
+	background: rgb(20,20,20);
+    color: white;
+    border: 3px solid;
+    margin-left: 15%;
+    padding: 20px;
+}
+
+
+
+.getcomment{
+    font-family: roboto;
+    width:100%;
+    max-width: 100%;
+    min-width: 100%;
+}
+
+
 .objects {
     width: 30vw;
     height:30vh;
