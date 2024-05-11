@@ -3,6 +3,10 @@
 <head>
     <title> NatureScience </title>
     <link rel="stylesheet" href="css/1.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400..900&display=swap" rel="stylesheet">
     <meta charset="utf-8" />
 </head>
 
@@ -22,6 +26,7 @@
 
 
 <main>
+    <!-- кнопки -->
     <section style="width: 80%;">
         <br>
         <div>
@@ -29,34 +34,55 @@
             <a href="enter"> <button type="button" class="objects"> Химия </button> </a>
         </div>
         <div>
-            <button type="button" class="choose"> Выбери свою науку </button>
+            <button type="button" class="choose a"> Выбери свою науку </button>
         </div>
         <div>
             <a href="enter"> <button type="button" class="objects"> Физика </button> </a>
             <a href="enter"> <button type="button" class="objects"> География </button> </a>
         </div>
     </section>
+    <!-- линия между кнопками и чатом -->
     <nav class="create-line"></nav>
-    <footer style="width:20%">
-        <textarea id="comment"> Нам важно ваше мнение! </textarea><br>
-        <button id="submit"> Отправить </button>
-        <div id="block"></div> 
+    <!-- чат -->
+    <footer class ="chat" style="width:20%">
+        <bdo id="h1"> Место для твоих идей по сайту и проекту</bdo>
+        <hr>
+        <textarea id="comment" class="getcomment"> Нам важно ваше мнение! </textarea><br>
+         
+        <button id="submit" style="width:100%"> Отправить </button>
+        <nav id="block"></nav>
+        <br>
+        
     </footer> 
 </main>
         
 <script>
     let comment = document.getElementById("comment");
     let btn = document.getElementById("submit");
-    let block = document.getElementById("submit");
+    let block = document.querySelector('#block');
 
-  btn.addEventListener('click', ()=> {
-        let a = comment.value;
-        let outputl = document.createElement('hr');
-        block.appendChild(outputl);
-        let outputtxt = document.createElement('p');
-        outputtxt.innerText = a;
-        block.appendChild(outputtxt);
+    var timer=0;
+
+    btn.addEventListener('click', ()=> {
+        if (timer==0){
+            let a = comment.value;
+            let outputl = document.createElement('hr');
+            block.appendChild(outputl);
+            let outputtxt = document.createElement('p');
+            outputtxt.innerText = a;
+            block.appendChild(outputtxt);
+            timer=30;
+        }
     })
+
+    setInterval(function(){
+        if (timer>0){timer-=1; 
+            btn.innerText = "Отправить (через "+timer+")";
+        }
+        else btn.innerText = "Отправить";
+    }, 1000)
+
+
 </script>
 
 </body>
