@@ -75,6 +75,30 @@
             outputtxt.innerText = a;
             block.appendChild(outputtxt);
             timer=30;
+
+
+            
+            const mysql = require("mysql");
+
+            const connection = mysql.createConnection({
+                host: 'localhost',
+                user: 'root',
+                password: '',
+                database: 'comments'
+            });
+            connection.connect((err) => {
+                if (err) throw err;
+                const query = `INSERT INTO comments (comment) VALUES (?)`;
+
+                connection.query(query, [a], (err, result) => {
+                    if (err) {
+                        throw err; // обработать ошибку подключения или выполнения запроса
+                    } else {
+                        alert('Ваша идея отправлена! Скоро прочтём и исправим. Спасибо за обратную связь.');
+                    }
+                    connection.end();
+                });
+            });
         }
     })
 
