@@ -33,60 +33,17 @@
     <script>
         var btnCreate = document.getElementById('create');
         var btnEnter = document.getElementById('enter');
-        const mysql = require("mysql");
-        var send = "";
 
         btnCreate.addEventListener('click', ()=>{
             var login = document.getElementById('loginR').value;
             var name = document.getElementById('passR').value;
             var pass = document.getElementById('nameR').value;
 
-            const connection = mysql.createConnection({
-                host: 'localhost',
-                user: 'root',
-                password: '',
-                database: 'Test'
-            });
-            connection.connect((err) => {
-                if (err) throw err;
-                const query = `INSERT INTO users (name, pass, login) VALUES (?, ?, ?)`;
-
-                connection.query(query, [name, pass, login], (err, result) => {
-                    if (err) {
-                        throw err; // обработать ошибку подключения или выполнения запроса
-                    } else {
-                        alert('Пользователь добавлен!');
-                    }
-                    connection.end();
-                });
-            });
+            alert("Пользователь добавлен. \n login: ${login}\n name: ${name}\n password: ${pass}")
 
         });
         btnEnter.onclick = function(){
-            var login = document.getElementById('loginE').value;
-            var name = document.getElementById('passE').value;
-            
-
-            const connection = mysql.createConnection({
-                host: 'localhost',
-                user: 'root',
-                password: '',
-                database: 'Test'
-            });
-            connection.connect((err) => {
-                if (err) throw err;
-                console.log('Соединение с базой данных установлено!');
-
-                const query = `INSERT INTO users (name, pass, login) VALUES (?, ?, ?)`;
-                connection.query(query, [name, password, login], (err, result) => {
-                    if (err) {
-                        throw err; // обработать ошибку подключения или выполнения запроса
-                    } else {
-                        alert('Пользователь добавлен!');
-                    }
-                    connection.end();
-                });
-            });
+            alert("Такого аккаунта не существует! Сначала пройдите регистрацию")
         };
     </script>
 </html>
